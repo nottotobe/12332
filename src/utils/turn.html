@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./extras/jquery.min.1.7.js"></script>
+  <script src="./extras/modernizr.2.5.3.min.js"></script>
+  <script src="./lib/turn.js"></script>
+  <title>Document</title>
+  <style>
+    #flipbook div {
+      text-align: center;
+      line-height: 500px;
+    }
+
+    .backward,
+    .forward {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="flipbook">
+    <div style="background: pink;" class="hard"> </div>
+    <div style="background: olivedrab;" class="hard"> </div>
+    <div style="background: palegoldenrod;"> Page 1 </div>
+    <div style="background: paleturquoise;"> Page 2 </div>
+    <div style="background: plum;"> Page 3 </div>
+    <div style="background: mediumaquamarine;"> Page 4 </div>
+    <div style="background: greenyellow;"> Page 5 </div>
+    <div style="background: darkkhaki;"> Page 6 </div>
+    <div style="background: aqua;" class="hard"> </div>
+    <div style="background: teal;" class="hard"> </div>
+  </div>
+
+  <!-- 前一页 -->
+  <img src="img/backward.png" class="backward" onclick="backwardPage()">
+  <!-- 后一页 -->
+  <img src="img/forward.png" class="forward" onclick="forwarPage()">
+
+
+  <script>
+    $("#flipbook").turn({
+      width: 800,
+      height: 800,
+      autoCenter: true
+    });
+
+    function backwardPage() {
+      $("#flipbook").turn("previous");
+    }
+
+    function forwarPage() {
+      $("#flipbook").turn("next");
+    }
+
+  </script>
+</body>
+
+</html>
